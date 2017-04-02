@@ -61,3 +61,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+.idea/misc.xml
+out/production/JavaFX---rysowanie/view/Drawing.fxml
