@@ -10,6 +10,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 
 /**
  * Created by staho on 02.04.2017.
@@ -23,6 +24,9 @@ public class Main extends Application{
         this.primaryStage = primaryStage;
         primaryStage.setTitle("Rysowanie funkcji");
         primaryStage.getIcons().add(new Image("https://cdn0.iconfinder.com/data/icons/personal-and-business-finance/64/1-27-512.png"));
+
+        URL resource = Main.class.getResource("../view/RootLayout.fxml");
+        System.out.println(resource.toString());
 
         initRootLayout();
         showDrawingOverview();
@@ -57,5 +61,8 @@ public class Main extends Application{
         } catch(IOException e){
             e.printStackTrace();
         }
+    }
+    public static void main(String[] args){
+        launch(args);
     }
 }

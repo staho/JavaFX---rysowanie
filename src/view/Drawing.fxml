@@ -5,12 +5,27 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.8327759197324415" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<SplitPane dividerPositions="0.8333333333333334" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DrawingController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <Canvas height="373.0" layoutX="14.0" layoutY="14.0" width="469.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+            <Canvas fx:id="canvas" height="570.0" layoutX="14.0" layoutY="14.0" width="800.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="14.0" />
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="132.0" />
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="132.0">
+         <children>
+            <Button layoutX="88.0" layoutY="517.0" mnemonicParsing="false" onAction="#handleStopBtnAction" text="Cancel" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+            <Button layoutX="25.0" layoutY="517.0" mnemonicParsing="false" onAction="#handleRunBtnAction" text="Run" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="70.0" />
+            <GridPane layoutX="7.0" layoutY="11.0" prefHeight="43.0" prefWidth="143.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ProgressBar fx:id="progressBar" prefWidth="200.0" progress="0.0" />
+               </children>
+            </GridPane>
+         </children></AnchorPane>
   </items>
 </SplitPane>
