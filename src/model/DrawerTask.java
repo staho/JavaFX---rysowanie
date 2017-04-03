@@ -26,11 +26,6 @@ public class DrawerTask extends Task{
                 gc.getCanvas().getWidth(),
                 gc.getCanvas().getHeight());
 
-        //PixelWriter pixelWriter = gc.getCanvas().getGraphicsContext2D().getPixelWriter();
-
-
-        double dx = 0.001;
-
         BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 
 
@@ -38,7 +33,6 @@ public class DrawerTask extends Task{
             for(double j = -8.; j <= 8.; j+=0.001){
                 if(Equation.calc(i,j)){
                     bi.setRGB((int)(50*i + width/2),(int)((-50)*j+height/2),Color.YELLOW.getRGB());
-                        //pixelWriter.setColor((int)(30*i + width/2), (int)((-30)*j+height/2), javafx.scene.paint.Color.YELLOW);
                 }
             }
             gc.drawImage(SwingFXUtils.toFXImage(bi, null), 0,0 );

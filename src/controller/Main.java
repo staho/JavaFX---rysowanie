@@ -6,8 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import model.MonteCarloData;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,6 +21,7 @@ import java.net.URL;
 public class Main extends Application{
     private Stage primaryStage;
     private BorderPane rootLayout;
+    private MonteCarloData data;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -58,10 +62,47 @@ public class Main extends Application{
 
             DrawingController controller = loader.getController();
             controller.setMain(this);
+            controller.setMonteCarloData(data);
         } catch(IOException e){
             e.printStackTrace();
         }
     }
+
+    public boolean showMonteCarloDataDialog(){
+        try{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/MonteCarloData.fxml"));
+            AnchorPane page = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Podaj dane do Monte Carlo");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            MonteCarloDataController controller = loader.getController();
+            controller.setData(data);
+            controller.setDialogStage(dialogStage);
+
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+
+        } catch (IOException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public Stage getPrimaryStage(){
+        return primaryStage;
+    }
+
+    public Main(){
+        this.data = new MonteCarloData();
+    }
+
     public static void main(String[] args){
         launch(args);
     }
