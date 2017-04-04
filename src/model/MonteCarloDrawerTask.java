@@ -41,14 +41,16 @@ public class MonteCarloDrawerTask extends Task {
         Random random = new Random();
 
         for(long i = 1; i <= data.getNoOfPoints(); i++){
-            x =  xB + -20 + (20-(-20)) * random.nextDouble();
-            y = yB + -20 + (20-(-20)) * random.nextDouble();
+            x =  -8 + (8-(-8)) * random.nextDouble();
+            y =  -8 + (8-(-8)) * random.nextDouble();
             if(Equation.calc(x,y)){
                 bi.setRGB((int)(50*x + width/2),(int)((-50)*y+height/2), Color.YELLOW.getRGB());
                 hits++;
             }
-            if(i % 1000 == 0) gc.drawImage(SwingFXUtils.toFXImage(bi, null), 0,0 );
-            TimeUnit.MICROSECONDS.sleep(5);
+            if(i % 1000 == 0) {
+                gc.drawImage(SwingFXUtils.toFXImage(bi, null), 0,0 );
+                TimeUnit.MICROSECONDS.sleep(5);
+            }
             updateProgress(i, data.getNoOfPoints());
             if(isCancelled()) break;
         }
