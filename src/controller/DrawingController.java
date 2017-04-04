@@ -1,5 +1,7 @@
 package controller;
 
+import javafx.concurrent.WorkerStateEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -58,7 +60,12 @@ public class DrawingController {
 
         new Thread(mcDrawerTask).start();
 
-        showMonteCarloDataDetails();
+        mcDrawerTask.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
+            @Override
+            public void handle(WorkerStateEvent event) {
+                showMonteCarloDataDetails();
+            }
+        });
 
     }
 

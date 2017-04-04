@@ -18,13 +18,18 @@ public class MonteCarloDrawerTask extends Task {
     protected Object call() throws Exception{
         final int width = (int)gc.getCanvas().getWidth();
         final int height = (int)gc.getCanvas().getHeight();
+        /*
+        gc.clearRect(gc.getCanvas().getLayoutX(),
+                gc.getCanvas().getLayoutY(),
+                gc.getCanvas().getWidth(),
+                gc.getCanvas().getHeight());
 
         gc.setFill(javafx.scene.paint.Color.BLUE);
         gc.fillRect(gc.getCanvas().getLayoutX(),
                 gc.getCanvas().getLayoutY(),
                 gc.getCanvas().getWidth(),
                 gc.getCanvas().getHeight());
-
+        */
         BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 
         double dx = data.getxEnd() - data.getxBegin();
@@ -44,12 +49,16 @@ public class MonteCarloDrawerTask extends Task {
             x =  -8 + (8-(-8)) * random.nextDouble();
             y =  -8 + (8-(-8)) * random.nextDouble();
             if(Equation.calc(x,y)){
-                bi.setRGB((int)(50*x + width/2),(int)((-50)*y+height/2), Color.YELLOW.getRGB());
+                bi.setRGB((int)(35*x + width/2),(int)((-35)*y+height/2), Color.YELLOW.getRGB());
                 hits++;
             }
+            else {
+                bi.setRGB((int)(35*x + width/2),(int)((-35)*y+height/2), Color.BLUE.getRGB());
+            }
+
             if(i % 1000 == 0) {
                 gc.drawImage(SwingFXUtils.toFXImage(bi, null), 0,0 );
-                TimeUnit.MICROSECONDS.sleep(5);
+                //TimeUnit.MICROSECONDS.sleep(5);
             }
             updateProgress(i, data.getNoOfPoints());
             if(isCancelled()) break;

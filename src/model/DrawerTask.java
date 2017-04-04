@@ -20,12 +20,18 @@ public class DrawerTask extends Task{
         final int width = (int)gc.getCanvas().getWidth();
         final int height = (int)gc.getCanvas().getHeight();
 
+        /*
+        gc.clearRect(gc.getCanvas().getLayoutX(),
+                gc.getCanvas().getLayoutY(),
+                gc.getCanvas().getWidth(),
+                gc.getCanvas().getHeight());
+
         gc.setFill(javafx.scene.paint.Color.BLUE);
         gc.fillRect(gc.getCanvas().getLayoutX(),
                 gc.getCanvas().getLayoutY(),
                 gc.getCanvas().getWidth(),
                 gc.getCanvas().getHeight());
-
+        */
         BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 
 
