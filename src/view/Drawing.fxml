@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.8333333333333334" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DrawingController">
+<SplitPane dividerPositions="0.8206412825651302" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DrawingController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
@@ -13,8 +13,8 @@
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="132.0">
          <children>
-            <Button layoutX="88.0" layoutY="517.0" mnemonicParsing="false" onAction="#handleStopBtnAction" text="Cancel" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
-            <Button layoutX="25.0" layoutY="517.0" mnemonicParsing="false" onAction="#handleRunBtnAction" text="Run" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="70.0" />
+            <Button layoutX="96.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleStopBtnAction" text="Cancel" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="5.0" />
+            <Button layoutX="50.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleRunBtnAction" text="Run" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="70.0" />
             <GridPane layoutX="7.0" layoutY="11.0" prefHeight="92.0" prefWidth="143.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -30,7 +30,7 @@
                   <Label text="Dane do obliczeń" GridPane.rowIndex="2" />
                </children>
             </GridPane>
-            <Button layoutX="14.0" layoutY="559.0" mnemonicParsing="false" onAction="#handleEditDataAction" text="Dane" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="112.0" />
+            <Button layoutX="7.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleEditDataAction" text="Dane" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="118.0" />
             <GridPane layoutX="8.0" layoutY="100.0" prefHeight="201.0" prefWidth="143.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -59,7 +59,7 @@
                   <Label fx:id="sumLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                </children>
             </GridPane>
-            <Button layoutX="42.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleCalculateBtnAction" text="Calculate" AnchorPane.rightAnchor="56.0" />
+            <Button layoutX="25.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleCalculateBtnAction" text="Calculate" AnchorPane.rightAnchor="61.0" />
             <Button layoutX="110.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleStopBtnAction" text="Stop" AnchorPane.rightAnchor="12.0" />
          </children></AnchorPane>
   </items>

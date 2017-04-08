@@ -35,8 +35,8 @@ public class MonteCarloDrawerTask extends Task {
         double dx = data.getxEnd() - data.getxBegin();
         double dy = data.getyEnd() - data.getyBegin();
 
-        double xB = data.getxBegin();
-        double yB = data.getyBegin();
+        //double xB = data.getxBegin();
+        //double yB = data.getyBegin();
 
         double x;
         double y;
